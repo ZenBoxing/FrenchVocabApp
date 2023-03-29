@@ -1,12 +1,11 @@
-const exceljs = require('exceljs');
+const fs = require('fs');
 
-const workbook = new exceljs.Workbook();
-let filename = 'C:\\Users\\jarre\\WebApps\\FrenchVocabApp\\french-vocab-app\\Lexique383.xlsb';
+let filename = 'C:\\Users\\jarre\\WebApps\\FrenchVocabApp\\french-vocab-app\\Fre.Freq.3.Hun.txt';
 
 async function loadFile()
 {
-    await workbook.xlsx.readFile(filename);
     
 }
+
 
 loadFile();
