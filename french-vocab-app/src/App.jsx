@@ -1,12 +1,11 @@
 import './App.css';
-import Title from './components/Title';
-import Button from './components/Button';
+import VocabEstimator from './components/VocabEstimator';
+
 
 const App = () => {
   return (
     <div className="App">
-        <Title/>
-        <Button/>
+        <VocabEstimator/>
     </div>
   );
 }

@@ -1,8 +1,16 @@
 
+
 const Button = () =>{
+
+    function handleClick(){
+        alert("Pressed");
+    }
+
     return(
-        <button>Press Me</button>
+        <button onClick={handleClick}>Press Me</button>
     );
 }
+
+
 
 export default Button;
