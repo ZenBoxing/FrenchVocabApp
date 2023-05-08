@@ -1,4 +1,4 @@
-
+import Results from './Results';
 
 const Button = () =>{
 
@@ -7,7 +7,10 @@ const Button = () =>{
     }
 
     return(
-        <button onClick={handleClick}>Press Me</button>
+        <div>
+            <button onClick={handleClick}>Press Me</button>
+            <Results result={result}/>
+        </div>
     );
 }
 
