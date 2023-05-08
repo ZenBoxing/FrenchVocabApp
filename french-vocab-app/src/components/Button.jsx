@@ -2,6 +2,8 @@ import Results from './Results';
 
 const Button = () =>{
 
+    const result = "5000";
+
     function handleClick(){
         alert("Pressed");
     }

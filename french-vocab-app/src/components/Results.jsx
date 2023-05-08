@@ -5,3 +5,5 @@ const Results = (result) => {
         <p>Your result is {result}</p>
     );
 }
+
+export default Results;

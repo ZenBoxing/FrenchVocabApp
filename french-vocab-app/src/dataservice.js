@@ -4,6 +4,8 @@ let filename = 'C:\\Users\\jarre\\WebApps\\FrenchVocabApp\\french-vocab-app\\Fre
 let wordList = [];
 let dataArr = [];
 
+const words = loadFile();
+
 function loadFile()
 {
     fs.readFile(filename, (err, data) => {
@@ -12,7 +14,8 @@ function loadFile()
         dataArr = data.toString().split("\n");
     });
 
-    for(let i = 0; i < dataArr.length; i++){
+    //change iteration length back to dataArr.length
+    for(let i = 0; i < 15; i++){
             
         let line = dataArr[i].split("\t");
 
@@ -26,4 +29,4 @@ function loadFile()
     return wordList;
 }
 
-loadFile();
+export {words};
