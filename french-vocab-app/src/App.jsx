@@ -1,13 +1,20 @@
 import './App.css';
 import VocabEstimator from './components/VocabEstimator';
-import words from './dataservice';
+import raw from  './data/Fre.Freq.3.Hun.txt'
 
 
 const App = () => {
 
+
+   fetch(raw)
+    .then(r => r.text())
+    .then(text => {
+       console.log('text decoded:', text);
+     });
+
   return (
     <div className="App">
-        <VocabEstimator wordlist={words}/>
+        <VocabEstimator/>
     </div>
   );
 }
