@@ -1,42 +1,45 @@
 import './App.css';
 import VocabEstimator from './components/VocabEstimator';
 import raw from  './data/Fre.Freq.3.Hun.txt'
+import { useEffect, useState } from 'react';
 
 
 const App = () => {
 
-  let words;
+  const  [words, setWords] = useState([]);
+  
+  const fetchData = () => {
+    fetch(raw)
+    .then(response => response.text()) 
+    .then(textString => {
+        
+        let dataArr = textString.split("\t");
+        let list = [];
 
-   fetch(raw)
-    .then(r => r.text())
-    .then(text => {
-       //console.log('text decoded:', text);
-      
-       const dataArr = text.split("\n");
-       const wordList = [];
-
-       for(let i = 0; i < 15; i++){
+        for(let i = 0; i < 15; i++){
             
-        let line = dataArr[i].split("\t");
+          let line = dataArr[i].split("\t");
+  
+          list[i] = {
+              word : line[0],
+              blogFreq : line[1],
+              newsFreq : line[10]
+          }
 
-        wordList[i] = {
-            word : line[0],
-            blogFreq : line[1],
-            newsFreq : line[10]
-        }        
-    }
+         setWords(list);
+      }
+    });
+  }
 
-    for(let i = 0; i < wordList.length; i++){
-      console.log(wordList[i].word);
-    }
+  useEffect(() => {
+    fetchData();
+  },[])
 
-    words = wordList;
-
- });
-
+  console.log(words);
+  
   return (
     <div className="App">
-        <VocabEstimator wordlist={words}/>
+        <VocabEstimator/>
     </div>
   );
 }
