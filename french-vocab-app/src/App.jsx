@@ -1,15 +1,12 @@
 import './App.css';
 import VocabEstimator from './components/VocabEstimator';
 import raw from  './data/Fre.Freq.3.Hun.txt'
-import { useEffect, useState } from 'react';
 
+let wordList = [];
 
-const App = () => {
+if (typeof window !== 'undefined') { 
 
-  const  [words, setWords] = useState([]);
-  
-  const fetchData = () => {
-    fetch(raw)
+  fetch(raw)
     .then(response => response.text()) 
     .then(textString => {
         
@@ -26,17 +23,15 @@ const App = () => {
               newsFreq : line[10]
           }
 
-         setWords(list);
+         wordList = list;
       }
     });
-  }
+}
 
-  useEffect(() => {
-    fetchData();
-  },[])
-
-  console.log(words);
+const App = () => {
   
+  console.log(wordList);
+
   return (
     <div className="App">
         <VocabEstimator/>
