@@ -3,14 +3,10 @@ import Title from './Title';
 // import List from './List';
 
 
-const VocabEstimator = () => {
+const VocabEstimator = ({words}) => {
     
-    //const words = wordlist;
+    console.log({words});
 
-    // for(let i = 0; i < 5; i++){
-    //     console.log(words[i].word);
-    //   }
-    
     return (
         <div className="VocabEstimatorForm">
             <Title/>

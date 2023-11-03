@@ -1,7 +1,8 @@
 import './App.css';
 import VocabEstimator from './components/VocabEstimator';
-import raw from  './data/Fre.Freq.3.Hun.txt'
-
+import raw from  './data/Fre.Freq.3.Hun.txt';
+import { useState } from 'react';
+ 
 let wordList = [];
 
 if (typeof window !== 'undefined') { 
@@ -30,11 +31,13 @@ if (typeof window !== 'undefined') {
 
 const App = () => {
   
-  console.log(wordList);
+  const [words, setWords] = useState(wordList);
+
+  //console.log(words[2].word);
 
   return (
     <div className="App">
-        <VocabEstimator/>
+        <VocabEstimator words={words}/>
     </div>
   );
 }
