@@ -11,10 +11,10 @@ if (typeof window !== 'undefined') {
     .then(response => response.text()) 
     .then(textString => {
         
-        let dataArr = textString.split("\t");
+        let dataArr = textString.split("\n");
         let list = [];
 
-        for(let i = 0; i < 15; i++){
+        for(let i = 1; i < 15; i++){
             
           let line = dataArr[i].split("\t");
   
@@ -23,17 +23,15 @@ if (typeof window !== 'undefined') {
               blogFreq : line[1],
               newsFreq : line[10]
           }
-
+          
          wordList = list;
-      }
+     }
     });
 }
 
 const App = () => {
   
   const [words, setWords] = useState(wordList);
-
-  //console.log(words[2].word);
 
   return (
     <div className="App">
