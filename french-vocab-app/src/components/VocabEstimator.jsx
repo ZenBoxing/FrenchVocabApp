@@ -1,15 +1,14 @@
 import Title from './Title';
 // import Button from './Button';
-// import List from './List';
+import List from './List';
 
 
-const VocabEstimator = ({words}) => {
+const VocabEstimator = (words) => {
     
-    console.log({words});
-
     return (
         <div className="VocabEstimatorForm">
             <Title/>
+            <List words={words}/>
         </div>
       );
 }

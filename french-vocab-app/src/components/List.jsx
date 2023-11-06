@@ -1,12 +1,8 @@
 
-const List = (wordlist) => {
+const List = (words) => {
 
-    const words = wordlist;
-
-    //const listItems = words.map(word => <li>{word.word}</li>);
-
-    //return <ul>{listItems}</ul>
-    return <p>{words[0].word}</p>
+    const listItems = words.words.words.map(word => <li>{word.word}</li>);
+    return <ul>{listItems}</ul>;
 }
 
 export default List;

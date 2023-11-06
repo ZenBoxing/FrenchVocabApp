@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
               blogFreq : line[1],
               newsFreq : line[10]
           }
-          
+
          wordList = list;
      }
     });
@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
 
 const App = () => {
   
-  const [words, setWords] = useState(wordList);
+  const [words] = useState(wordList);
 
   return (
     <div className="App">
