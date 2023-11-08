@@ -1,6 +1,6 @@
 import Title from './Title';
 // import Button from './Button';
-import List from './List';
+import Form from './Form';
 
 
 const VocabEstimator = (words) => {
@@ -8,7 +8,7 @@ const VocabEstimator = (words) => {
     return (
         <div className="VocabEstimatorForm">
             <Title/>
-            <List words={words}/>
+            <Form words={words}/>
         </div>
       );
 }
