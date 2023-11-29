@@ -1,17 +1,40 @@
-//import { useState } from "react";
+import { useState } from "react";
+import raw from  './componentdata/Fre.Freq.3.Hun.txt';
 
 
+const Form = () => {
 
-const Form = (words) => {
+     const [words, setWords] = useState();
+   
 
-    
-    //const wl = words.words.words;
+     const onGenerateForm = () => {
 
-    //console.log(wl);
+          fetch(raw)
+            .then(response => response.text()) 
+            .then(textString => {
+        
+            let dataArr = textString.split("\n");
+            let list = [];
+
+            //array length of five for now
+            for(let i = 1; i < 6; i++){
+                
+              let line = dataArr[i].split("\t");
+      
+              list[i] = {
+                  word : line[0],
+                  blogFreq : line[1],
+                  newsFreq : line[10]
+              }
+        }        
+          setWords(list);      
+        });
+     }
 
     return (
       <div>
-         <h2>testing</h2>
+         <h2>form</h2>
+         <button onClick={onGenerateForm}>Generate Form</button>
       </div>
     );
     // const [checkedState, setCheckedState] = useState(

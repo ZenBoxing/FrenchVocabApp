@@ -2,14 +2,13 @@ import Title from './Title';
 import Form from './Form';
 
 
-const VocabEstimator = (words) => {
-    
+const VocabEstimator = () => {
     
 
     return (
         <div className="VocabEstimatorForm">
             <Title/>
-            <Form words={words}/>
+            <Form />
         </div>
       );
 }
