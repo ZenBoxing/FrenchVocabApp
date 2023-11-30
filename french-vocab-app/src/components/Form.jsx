@@ -4,8 +4,8 @@ import raw from  './componentdata/Fre.Freq.3.Hun.txt';
 
 const Form = () => {
 
-     const [words, setWords] = useState();
-   
+     const [words, setWords] = useState([]);
+     const [checkedList, setCheckedList] = useState([]);
 
      const onGenerateForm = () => {
 
@@ -31,10 +31,28 @@ const Form = () => {
         });
      }
 
+     const onCompleteForm = () => {
+      
+     }
+
+
+
     return (
       <div>
          <h2>form</h2>
          <button onClick={onGenerateForm}>Generate Form</button>
+         <button onCLick={onCompleteForm}>Submit</button>
+         {words.map((word, index) => {
+            return(
+              <div className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.word}
+                />
+              </div>
+            )
+         })}
       </div>
     );
     // const [checkedState, setCheckedState] = useState(
