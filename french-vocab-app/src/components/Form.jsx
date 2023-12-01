@@ -17,9 +17,11 @@ const Form = () => {
             let list = [];
 
             //array length of five for now
-            for(let i = 1; i < 6; i++){
-                
-              let line = dataArr[i].split("\t");
+            for(let i = 1; i < 70; i++){
+              
+
+              let num = Math.floor(getRandomArbitrary(0, 3000));
+              let line = dataArr[num].split("\t");
       
               list[i] = {
                   word : line[0],
@@ -31,24 +33,44 @@ const Form = () => {
         });
      }
 
-     const onCompleteForm = () => {
-      
+
+     const getRandomArbitrary = (min, max) => {
+        return Math.random() * (max - min) + min;
      }
 
+     const onCompleteForm = () => {
+        console.log("Selected: ");
+        console.log(checkedList);
+     }
+
+     const handleSelect = (event) => {
+        const value = event.target.value;
+        const isChecked = event.target.checked;
+    
+        if (isChecked) {
+          //Add checked item into checkList
+          setCheckedList([...checkedList, value]);
+        } else {
+          //Remove unchecked item from checkList
+          const filteredList = checkedList.filter((item) => item !== value);
+          setCheckedList(filteredList);
+    }
+  };
 
 
     return (
       <div>
          <h2>form</h2>
          <button onClick={onGenerateForm}>Generate Form</button>
-         <button onCLick={onCompleteForm}>Submit</button>
+         <button onClick={onCompleteForm}>Submit</button>
          {words.map((word, index) => {
             return(
-              <div className="checkbox-container">
+              <div key={word.word} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
                   value={word.word}
+                  onChange={handleSelect}
                 />
               </div>
             )
