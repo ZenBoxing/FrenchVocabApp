@@ -89,7 +89,7 @@ const Form = () => {
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
-                  value={word.word}
+                  value={word.rank}
                   onChange={handleSelect}
                 />
               </div>
@@ -102,7 +102,7 @@ const Form = () => {
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
-                  value={word.word}
+                  value={word.rank}
                   onChange={handleSelect}
                 />
               </div>
