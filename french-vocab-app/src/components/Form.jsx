@@ -6,11 +6,11 @@ const Form = () => {
 
      const [levelOne, setLevelOne] = useState([]);
      const [levelTwo, setLevelTwo] = useState([]);
-    //  const [levelThree, setLevelThree] = useState([]);
-    //  const [levelFour, setLevelFour] = useState([]);
-    //  const [levelFive, setLevelFive] = useState([]);
-    //  const [levelSix, setLevelSix] = useState([]);
-    //  const [levelSeven, setLevelSeven] = useState([]);
+     const [levelThree, setLevelThree] = useState([]);
+     const [levelFour, setLevelFour] = useState([]);
+     const [levelFive, setLevelFive] = useState([]);
+     const [levelSix, setLevelSix] = useState([]);
+     const [levelSeven, setLevelSeven] = useState([]);
 
      const [checkedList, setCheckedList] = useState([]);
 
@@ -24,11 +24,11 @@ const Form = () => {
             
             setList(dataArray, 0, 3000, setLevelOne);
             setList(dataArray, 3000, 12000, setLevelTwo);
-            // setList(dataArray, 12000, 20000, setLevelThree);
-            // setList(dataArray, 20000, 30000, setLevelFour);
-            // setList(dataArray, 30000, 35000, setLevelFive);
-            // setList(dataArray, 35000, 40000, setLevelSix);
-            // setList(dataArray, 40000, 45000, setLevelSeven);
+            setList(dataArray, 12000, 20000, setLevelThree);
+            setList(dataArray, 20000, 30000, setLevelFour);
+            setList(dataArray, 30000, 35000, setLevelFive);
+            setList(dataArray, 35000, 40000, setLevelSix);
+            setList(dataArray, 40000, 45000, setLevelSeven);
                   
             
         });
@@ -108,6 +108,85 @@ const Form = () => {
               </div>
             )
          })}
+
+         {levelThree.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+
+         {levelFour.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+
+         {levelFive.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+         {levelFive.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+
+         {levelSix.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+
+         {levelSeven.map((word, index) => {
+            return(
+              <div key={word.word} className="checkbox-container">
+                <label>{word.word}</label>
+                <input
+                  type="checkbox"
+                  value={word.rank}
+                  onChange={handleSelect}
+                />
+              </div>
+            )
+         })}
+
+
       </div>
     );
 
