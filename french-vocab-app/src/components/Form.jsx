@@ -14,7 +14,11 @@ const Form = () => {
 
      const [checkedList, setCheckedList] = useState([]);
 
+     const [result, setResult] = useState();
+
      const onGenerateForm = () => {
+
+          setCheckedList([]);
 
           fetch(raw)
             .then(response => response.text()) 
@@ -23,12 +27,12 @@ const Form = () => {
             let dataArray = textString.split("\n");
             
             setList(dataArray, 0, 3000, setLevelOne);
-            setList(dataArray, 3000, 12000, setLevelTwo);
-            setList(dataArray, 12000, 20000, setLevelThree);
-            setList(dataArray, 20000, 30000, setLevelFour);
-            setList(dataArray, 30000, 35000, setLevelFive);
-            setList(dataArray, 35000, 40000, setLevelSix);
-            setList(dataArray, 40000, 45000, setLevelSeven);
+            setList(dataArray, 3001, 12000, setLevelTwo);
+            setList(dataArray, 12001, 20000, setLevelThree);
+            setList(dataArray, 20001, 30000, setLevelFour);
+            setList(dataArray, 30001, 35000, setLevelFive);
+            setList(dataArray, 35001, 40000, setLevelSix);
+            setList(dataArray, 40001, 45000, setLevelSeven);
                   
             
         });
@@ -44,7 +48,7 @@ const Form = () => {
           let num = Math.floor(getRandomArbitrary(min, max));
           let line = array[num].split("\t");
           
-          //possibly dont need bloqfreq or newsFreq
+          
           list[i] = {
               word : line[0],
               rank : num
@@ -59,8 +63,38 @@ const Form = () => {
      }
 
      const onCompleteForm = () => {
-        console.log("Selected: ");
-        console.log(checkedList);
+
+      let b1 = 0;
+      let b2 = 0;
+      let b3 = 0;
+      let b4 = 0;
+      let b5 = 0;
+      let b6 = 0;
+      let b7 = 0;
+      
+      for(let i = 0; i < checkedList.length; i++){
+        if(checkedList[i] >= 0 && checkedList[i] <= 3000){
+          b1++;
+        }else if(checkedList[i] >= 3001 && checkedList[i] <= 12000){
+          b2++;
+        }else if(checkedList[i] >= 12001 && checkedList[i] <= 20000){
+          b3++;
+        }else if(checkedList[i] >= 20001 && checkedList[i] <= 30000){
+          b4++;
+        }else if(checkedList[i] >= 30001 && checkedList[i] <= 35000){
+          b5++;
+        }else if(checkedList[i] >= 35001 && checkedList[i] <= 40000){
+          b6++;
+        }else if(checkedList[i] >= 40001 && checkedList[i] <= 45000){
+          b7++;
+        }
+
+      }
+
+      let s = ((b1 + b2 + b3 + b4)* 150) + ((b5 + b6 + b7) * 600);
+      
+      setResult(s);
+      
      }
 
      const handleSelect = (event) => {
@@ -77,15 +111,19 @@ const Form = () => {
     }
   };
 
+  //generate key for checkboxes
+  //clear checkboxes after generate form
 
     return (
       <div>
          <h2>form</h2>
+         <label>{result} Words</label>
+         <br></br>
          <button onClick={onGenerateForm}>Generate Form</button>
          <button onClick={onCompleteForm}>Submit</button>
          {levelOne.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -98,7 +136,7 @@ const Form = () => {
 
          {levelTwo.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -111,7 +149,7 @@ const Form = () => {
 
          {levelThree.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -124,7 +162,7 @@ const Form = () => {
 
          {levelFour.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -137,19 +175,7 @@ const Form = () => {
 
          {levelFive.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-         {levelFive.map((word, index) => {
-            return(
-              <div key={word.word} className="checkbox-container">
+              <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -162,7 +188,7 @@ const Form = () => {
 
          {levelSix.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
@@ -175,7 +201,7 @@ const Form = () => {
 
          {levelSeven.map((word, index) => {
             return(
-              <div key={word.word} className="checkbox-container">
+              <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   type="checkbox"
