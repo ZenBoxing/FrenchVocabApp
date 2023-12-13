@@ -55,6 +55,7 @@ const Form = () => {
               word : line[0],
               rank : num
           }
+
        }  
               
       setter(list);      
@@ -97,7 +98,6 @@ const Form = () => {
       
       setResult(s);
       
-      
      }
 
      const uncheckAll = () => {
@@ -112,7 +112,6 @@ const Form = () => {
 
      }
 
-
      const handleSelect = (event) => {
         const value = event.target.value;
         const isChecked = event.target.checked;
@@ -126,9 +125,7 @@ const Form = () => {
           setCheckedList(filteredList);
     }
   };
-
-  //generate key for checkboxes
-  //clear checkboxes after generate form
+  
 
     return (
       <div>
@@ -139,7 +136,7 @@ const Form = () => {
          <button onClick={onCompleteForm}>Submit</button>
          {levelOne.map((word, index) => {
             return(
-              <div className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -153,7 +150,7 @@ const Form = () => {
 
          {levelTwo.map((word, index) => {
             return(
-              <div className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -167,7 +164,7 @@ const Form = () => {
 
          {levelThree.map((word, index) => {
             return(
-              <div className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -181,7 +178,7 @@ const Form = () => {
 
          {levelFour.map((word, index) => {
             return(
-              <div  className="checkbox-container">
+              <div key={index}  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -195,7 +192,7 @@ const Form = () => {
 
          {levelFive.map((word, index) => {
             return(
-              <div  className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -209,7 +206,7 @@ const Form = () => {
 
          {levelSix.map((word, index) => {
             return(
-              <div  className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
@@ -223,7 +220,7 @@ const Form = () => {
 
          {levelSeven.map((word, index) => {
             return(
-              <div  className="checkbox-container">
+              <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
                 <input
                   className="cb"
