@@ -36,6 +36,8 @@ const Form = () => {
                   
             
         });
+
+        uncheckAll();
      }
 
      const setList = (array, min, max, setter) => {
@@ -95,7 +97,21 @@ const Form = () => {
       
       setResult(s);
       
+      
      }
+
+     const uncheckAll = () => {
+
+       let checkboxes = document.querySelectorAll('.cb');
+      
+       console.log(checkboxes);
+
+       for(let i = 0; i < checkboxes.length; i++){
+          checkboxes[i].checked = false;
+       }
+
+     }
+
 
      const handleSelect = (event) => {
         const value = event.target.value;
@@ -126,6 +142,7 @@ const Form = () => {
               <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -139,6 +156,7 @@ const Form = () => {
               <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -152,6 +170,7 @@ const Form = () => {
               <div className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -165,6 +184,7 @@ const Form = () => {
               <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -178,6 +198,7 @@ const Form = () => {
               <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -191,6 +212,7 @@ const Form = () => {
               <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
@@ -204,6 +226,7 @@ const Form = () => {
               <div  className="checkbox-container">
                 <label>{word.word}</label>
                 <input
+                  className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
