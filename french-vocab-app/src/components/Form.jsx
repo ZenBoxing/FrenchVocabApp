@@ -134,6 +134,7 @@ const Form = () => {
          <br></br>
          <button onClick={onGenerateForm}>Generate Form</button>
          <button onClick={onCompleteForm}>Submit</button>
+         <div className="checkbox-background">
          {levelOne.map((word, index) => {
             return(
               <div key={index} className="checkbox-container">
@@ -231,7 +232,7 @@ const Form = () => {
               </div>
             )
          })}
-
+          </div>
 
       </div>
     );

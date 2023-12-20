@@ -1,4 +1,3 @@
-import './App.css';
 import VocabEstimator from './components/VocabEstimator';
 
 const App = () => {

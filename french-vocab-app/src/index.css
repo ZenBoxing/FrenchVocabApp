@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button{
+  background-color: green;
+}
+
+.checkbox-background{
+  columns: 100px 7;
+  position:fixed;
+  left: 50px;
+}
+
