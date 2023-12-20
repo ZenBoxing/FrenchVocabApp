@@ -4,13 +4,7 @@ import raw from  './componentdata/Fre.Freq.3.Hun.txt';
 
 const Form = () => {
 
-     const [levelOne, setLevelOne] = useState([]);
-     const [levelTwo, setLevelTwo] = useState([]);
-     const [levelThree, setLevelThree] = useState([]);
-     const [levelFour, setLevelFour] = useState([]);
-     const [levelFive, setLevelFive] = useState([]);
-     const [levelSix, setLevelSix] = useState([]);
-     const [levelSeven, setLevelSeven] = useState([]);
+     const [words, setWords] = useState([]);
 
      const [checkedList, setCheckedList] = useState([]);
 
@@ -26,38 +20,35 @@ const Form = () => {
         
             let dataArray = textString.split("\n");
             
-            setList(dataArray, 0, 3000, setLevelOne);
-            setList(dataArray, 3001, 12000, setLevelTwo);
-            setList(dataArray, 12001, 20000, setLevelThree);
-            setList(dataArray, 20001, 30000, setLevelFour);
-            setList(dataArray, 30001, 35000, setLevelFive);
-            setList(dataArray, 35001, 40000, setLevelSix);
-            setList(dataArray, 40001, 45000, setLevelSeven);
-                  
-            
+            setList(dataArray, setWords);
+      
         });
 
         uncheckAll();
      }
 
-     const setList = (array, min, max, setter) => {
+     const setList = (array, setter) => {
       
         let list = [];
-       
-        for(let i = 1; i < 11; i++){
-              
+        
+        const mins = [0, 3001,12001,20001,30001,35001,40001];
+        const maxs = [3000, 12001,20000,30000,35000,40000,45000];
 
-          let num = Math.floor(getRandomArbitrary(min, max));
+        for(let i = 1, c = 1, p = 0; i < 71; i++, c++){
+              
+          if(c === 11){
+            p++;
+            c = 1;
+          }
+
+          let num = Math.floor(getRandomArbitrary(mins[p], maxs[p]));
           let line = array[num].split("\t");
-          
-          
+           
           list[i] = {
               word : line[0],
               rank : num
           }
-
-       }  
-              
+       }                
       setter(list);      
      }
 
@@ -135,7 +126,7 @@ const Form = () => {
          <button onClick={onGenerateForm}>Generate Form</button>
          <button onClick={onCompleteForm}>Submit</button>
          <div className="checkbox-background">
-         {levelOne.map((word, index) => {
+         {words.map((word, index) => {
             return(
               <div key={index} className="checkbox-container">
                 <label>{word.word}</label>
@@ -149,90 +140,7 @@ const Form = () => {
             )
          })}
 
-         {levelTwo.map((word, index) => {
-            return(
-              <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-
-         {levelThree.map((word, index) => {
-            return(
-              <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-
-         {levelFour.map((word, index) => {
-            return(
-              <div key={index}  className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-
-         {levelFive.map((word, index) => {
-            return(
-              <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-
-         {levelSix.map((word, index) => {
-            return(
-              <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-
-         {levelSeven.map((word, index) => {
-            return(
-              <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
-                <input
-                  className="cb"
-                  type="checkbox"
-                  value={word.rank}
-                  onChange={handleSelect}
-                />
-              </div>
-            )
-         })}
-          </div>
+        </div>
 
       </div>
     );
