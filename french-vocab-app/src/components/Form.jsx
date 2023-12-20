@@ -120,11 +120,17 @@ const Form = () => {
 
     return (
       <div>
-         <h2>form</h2>
-         <label>{result} Words</label>
+         <h1 className="title">French Vocab App</h1>
          <br></br>
-         <button onClick={onGenerateForm}>Generate Form</button>
+         <p className="description"> description goes here</p>
+         
+         <div className="button-container">
+         <button onClick={onGenerateForm}>Refresh Form</button>
+         <br></br>
          <button onClick={onCompleteForm}>Submit</button>
+         <br></br>
+         <label>{result} Words</label>
+         </div>
          <div className="checkbox-background">
          {words.map((word, index) => {
             return(

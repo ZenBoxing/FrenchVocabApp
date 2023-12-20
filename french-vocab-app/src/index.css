@@ -16,9 +16,33 @@ button{
   background-color: green;
 }
 
+.title{
+  position: fixed;
+  left: 50px;
+  top:75px;
+}
+
+.description{
+  position: fixed;
+  left: 55px;
+  top: 125px;
+}
+
+
+.button-container{
+  position:fixed;
+  left: 1200px;
+  top: 300px;
+}
+
+
 .checkbox-background{
   columns: 100px 7;
+  background-color: #C9E1D9;
+  border-radius: 10px;
   position:fixed;
+  padding: 10px;
   left: 50px;
+  top: 250px;
 }
 
