@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+input[type='checkbox'] {
+  accent-color: #34225c;
+}
+
+.box-label{
+  padding:5px;
+  margin:2px;
+}
+
 button{
   background-color: green;
 }
@@ -28,13 +37,11 @@ button{
   top: 125px;
 }
 
-
 .button-container{
   position:fixed;
   left: 1200px;
   top: 300px;
 }
-
 
 .checkbox-background{
   columns: 100px 7;
@@ -45,4 +52,5 @@ button{
   left: 50px;
   top: 250px;
 }
+
 

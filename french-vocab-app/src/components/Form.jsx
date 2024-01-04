@@ -135,13 +135,13 @@ const Form = () => {
          {words.map((word, index) => {
             return(
               <div key={index} className="checkbox-container">
-                <label>{word.word}</label>
                 <input
                   className="cb"
                   type="checkbox"
                   value={word.rank}
                   onChange={handleSelect}
                 />
+                <label className="box-label">{word.word}</label>
               </div>
             )
          })}
