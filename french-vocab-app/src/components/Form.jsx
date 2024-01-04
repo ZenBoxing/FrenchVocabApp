@@ -125,9 +125,9 @@ const Form = () => {
          <p className="description"> description goes here</p>
          
          <div className="button-container">
-         <button onClick={onGenerateForm}>Refresh Form</button>
+         <button className="form-button" onClick={onGenerateForm}>Refresh Form</button>
          <br></br>
-         <button onClick={onCompleteForm}>Submit</button>
+         <button className="form-button" onClick={onCompleteForm}>Submit</button>
          <br></br>
          <label>{result} Words</label>
          </div>

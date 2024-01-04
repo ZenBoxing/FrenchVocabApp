@@ -21,9 +21,6 @@ input[type='checkbox'] {
   margin:2px;
 }
 
-button{
-  background-color: green;
-}
 
 .title{
   position: fixed;
@@ -38,9 +35,32 @@ button{
 }
 
 .button-container{
+  height: 100px;
+  width: 200px;
   position:fixed;
   left: 1200px;
   top: 300px;
+  border: 2px solid green;
+}
+
+.form-button{
+  width: 150px;
+  height: 35px;
+  margin: 2px;
+  padding: 5px;
+  background-color: #34225c;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #34225c;
+}
+
+.form-button {
+  transition-duration: 0.2s;
+}
+
+.form-button:hover {
+  background-color: #a999cc;
+  color: white;
 }
 
 .checkbox-background{
