@@ -1,16 +1,10 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap');
+
+* {
+  font-family:'Roboto Condensed', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 input[type='checkbox'] {
   accent-color: #34225c;
@@ -21,6 +15,7 @@ input[type='checkbox'] {
   margin:2px;
   color:#34225c;
   word-wrap: break-word;
+  font-weight: 400;
 }
 
 
@@ -34,6 +29,7 @@ input[type='checkbox'] {
   position: fixed;
   left: 55px;
   top: 125px;
+  font-weight: 300;
 }
 
 .button-container{
@@ -52,6 +48,7 @@ input[type='checkbox'] {
   padding: 5px;
   background-color: #34225c;
   color: white;
+  font-weight: 600;
   border-radius: 5px;
   border: 2px solid #34225c;
 }
