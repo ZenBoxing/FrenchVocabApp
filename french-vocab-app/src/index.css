@@ -17,8 +17,10 @@ input[type='checkbox'] {
 }
 
 .box-label{
-  padding:5px;
+  padding:2px;
   margin:2px;
+  color:#34225c;
+  word-wrap: break-word;
 }
 
 
@@ -64,6 +66,8 @@ input[type='checkbox'] {
 }
 
 .checkbox-background{
+  height: 230px;
+  width: 1100px;
   columns: 100px 7;
   background-color: #C9E1D9;
   border-radius: 10px;
@@ -71,6 +75,7 @@ input[type='checkbox'] {
   padding: 10px;
   left: 50px;
   top: 250px;
+  overflow: auto;
 }
 
 
