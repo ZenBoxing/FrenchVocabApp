@@ -120,16 +120,18 @@ const Form = () => {
 
     return (
       <div>
-         <h1 className="title">French Vocab App</h1>
+         <h1 className="title">Mesurez votre vocabulaire français</h1>
          <br></br>
-         <p className="description"> description goes here</p>
+         <p className="description">Découvrez combien de mots que vous connaissez en complétant le formulaire ci-dessous. <br/>
+         Cochez la case si vous êtes sûr de connaître la définition du mot, sinon laissez-la vide.  <br/>
+         Une fois que vous avez terminé, cliquez sur le bouton Soumettre et voyez vos résultats.</p>
          
          <div className="button-container">
-         <button className="form-button" onClick={onGenerateForm}>Refresh Form</button>
+         <button className="form-button" onClick={onGenerateForm}>Rafraîchir</button>
          <br></br>
-         <button className="form-button" onClick={onCompleteForm}>SUBMIT</button>
+         <button className="form-button" onClick={onCompleteForm}>Soumettre</button>
          <br></br>
-         <label>{result} Words</label>
+         <label>{result} Mots</label>
          </div>
          <div className="checkbox-background">
          {words.map((word, index) => {
