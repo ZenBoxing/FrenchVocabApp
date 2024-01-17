@@ -25,6 +25,9 @@ const Form = () => {
         });
 
         uncheckAll();
+        let label = document.querySelector('.result-label');
+        label.style.visibility = 'hidden';
+
      }
 
      const setList = (array, setter) => {
@@ -86,8 +89,11 @@ const Form = () => {
       }
 
       let s = ((b1 + b2 + b3 + b4)* 150) + ((b5 + b6 + b7) * 600);
-      
+      let label = document.querySelector('.result-label');
+
       setResult(s);
+      label.style.visibility = 'visible';
+      
       
      }
 
@@ -132,7 +138,7 @@ const Form = () => {
          <br></br>
          <button className="form-button" onClick={onCompleteForm}>Soumettre</button>
          <br></br>
-         <label>{result} Mots</label>
+         <label className="result-label" >{result} Mots</label>
          </div>
          <div className="checkbox-background">
          {words.map((word, index) => {

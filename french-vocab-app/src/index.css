@@ -16,6 +16,10 @@ input[type='checkbox'] {
   font-weight: 400;
 }
 
+.result-label{
+  visibility: hidden;
+}
+
 
 .title{
   position: fixed;
