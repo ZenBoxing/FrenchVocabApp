@@ -36,17 +36,17 @@ input[type='checkbox'] {
   position:fixed;
   left: 1200px;
   top: 300px;
-  border: 2px solid green;
 }
 
 .form-button{
   width: 150px;
-  height: 35px;
+  height: 45px;
   margin: 2px;
   padding: 5px;
   background-color: #34225c;
   color: white;
   font-weight: 600;
+  font-size: 15px;
   border-radius: 5px;
   border: 2px solid #34225c;
 }

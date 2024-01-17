@@ -124,6 +124,7 @@ const Form = () => {
          <br></br>
          <p className="description">Découvrez combien de mots que vous connaissez en complétant le formulaire ci-dessous. <br/>
          Cochez la case si vous êtes sûr de connaître la définition du mot, sinon laissez-la vide.  <br/>
+         Les mots sont classés approximativement par la fréquence d’utilisation générale. <br/>
          Une fois que vous avez terminé, cliquez sur le bouton Soumettre et voyez vos résultats.</p>
          
          <div className="button-container">
