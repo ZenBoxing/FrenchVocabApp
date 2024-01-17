@@ -18,6 +18,11 @@ input[type='checkbox'] {
 
 .result-label{
   visibility: hidden;
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  left: 50px;
+  top: 25px;
 }
 
 
