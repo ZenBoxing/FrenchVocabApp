@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import raw from  './componentdata/Fre.Freq.3.Hun.txt';
 
 
@@ -9,6 +9,11 @@ const Form = () => {
      const [checkedList, setCheckedList] = useState([]);
 
      const [result, setResult] = useState();
+
+     useEffect(() => { 
+      onGenerateForm(); 
+    }, []) 
+
 
      const onGenerateForm = () => {
 
