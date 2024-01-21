@@ -14,7 +14,6 @@ const Form = () => {
       onGenerateForm(); 
     }, []) 
 
-
      const onGenerateForm = () => {
 
           setCheckedList([]);
