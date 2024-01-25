@@ -12,7 +12,8 @@ const Form = () => {
 
      useEffect(() => { 
       onGenerateForm(); 
-    }, []) 
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [words]) 
 
      const onGenerateForm = () => {
 
