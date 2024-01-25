@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import raw from  './componentdata/Fre.Freq.3.Hun.txt';
 
 
@@ -10,10 +10,10 @@ const Form = () => {
 
      const [result, setResult] = useState();
 
-     useEffect(() => { 
-      onGenerateForm(); 
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []) 
+    //  useEffect(() => { 
+    //   onGenerateForm(); 
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []) 
 
      const onGenerateForm = () => {
 
